@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<ns3:modelConfig xsi:type="ns3:ModelConfig" folder="" pauseCalculations="false" entityCode="8" loadPath="old3" entityName="old3" version="18" name="old3" lastUpdated="2024-10-10T15:43:27.504+03:00" lastUpdatedBy="admin" id="admin:MODEL:old3" xmlns:ns6="http://www.modelshop.com/services/account/types" xmlns:ns5="http://www.modelshop.com/datacore/message/types" xmlns:ns8="http://www.modelshop.com/datacore/generator/types" xmlns:ns7="http://www.modelshop.com/datacore/repository/types" xmlns:ns2="http://www.modelshop.com/datacore/view/types" xmlns:ns4="http://www.modelshop.com/services/model/types" xmlns:ns3="http://www.modelshop.com/model/model/types" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <datalists entityCode="10" entityName="EquifaxTestCert" version="17" name="EquifaxTestCert" created="2024-10-10T15:43:07.285+03:00" createdBy="admin" lastUpdated="2024-10-10T15:43:07.285+03:00" lastUpdatedBy="admin" id="EquifaxTestCert"/>
+    <datalists entityCode="9" entityName="collection" version="17" name="collection" created="2024-10-10T15:43:27.503+03:00" createdBy="admin" lastUpdated="2024-10-10T15:43:27.503+03:00" lastUpdatedBy="admin" id="collection">
+        <dataFields type="text" fieldCode="100" readOnly="true" rawType="java.lang.String" name="sourceName" description="Source name" initialized="true" id="sourceName">
+            <defaultValue source="'Manual Entry'"/>
+        </dataFields>
+        <dataFields type="integer" fieldCode="101" readOnly="true" rawType="java.lang.Long" name="lineNumber" description="Source line number" initialized="true" id="lineNumber">
+            <defaultValue source="id"/>
+        </dataFields>
+        <dataFields type="map" fieldCode="102" readOnly="true" rawType="com.modelshop.datacore.datatype.MapRecord" name="data" description="JSON content field" initialized="true" id="data"/>
+    </datalists>
+    <views allColumns="true" default="true" modelView="true" entityName="old3" name="old3" description="Default view for list old3" id="old3"/>
+    <views allColumns="true" default="true" entityName="EquifaxTestCert" name="EquifaxTestCert" description="Default view for list EquifaxTestCert" id="EquifaxTestCert"/>
+    <views allColumns="true" default="true" entityName="collection" name="collection" description="Default view for list collection" id="collection"/>
+    <connectors entityName="EquifaxTestCert" name="EquifaxTestCert" created="2024-10-10T15:43:07.286+03:00" createdBy="admin" lastUpdated="2024-10-10T15:43:07.286+03:00" lastUpdatedBy="admin" id="EquifaxTestCert">
+        <dataSource connectorUrl="EquifaxTestCert.ssl">
+            <fileSource>
+                <dataSourceRefs>EquifaxTestCert.ssl</dataSourceRefs>
+            </fileSource>
+            <loadFilter/>
+        </dataSource>
+        <mediaConfig connectorMediaType="textfile">
+            <textMedia/>
+        </mediaConfig>
+    </connectors>
+    <connectors layoutDetected="true" entityName="collection" version="17" name="collection" created="2024-10-10T15:43:27.504+03:00" createdBy="admin" lastUpdated="2024-10-10T15:43:27.504+03:00" lastUpdatedBy="admin" id="collection">
+        <connectorFields mapField="sourceName" type="text" readOnly="true" rawType="String" name="sourceName" description="Source name" id="sourceName"/>
+        <connectorFields mapField="lineNumber" type="integer" readOnly="true" rawType="Long" name="lineNumber" description="Source line number" id="lineNumber"/>
+        <connectorFields ignore="false" mapField="data" type="map" readOnly="true" rawType="LinkedHashMap" name="data" description="JSON content field" id="data"/>
+        <dataSource connectorUrl="collection.json">
+            <fileSource>
+                <dataSourceRefs>collection.json</dataSourceRefs>
+            </fileSource>
+            <loadFilter/>
+        </dataSource>
+        <mediaConfig autoDetect="true" connectorMediaType="json">
+            <jsonMedia jsonDataProperty="data"/>
+        </mediaConfig>
+    </connectors>
+    <extra name="ModelCanvasCoordinates" description="Coordinates for ModelCanvasCoordinates" id="ModelCanvasCoordinates">
+        <body>{"DATALIST:collection":{"x":-37,"y":168},"DATALIST:EquifaxTestCert":{"x":-350,"y":-132},"CONNECTOR:collection":{"x":-135,"y":194},"CONNECTOR:EquifaxTestCert":{"x":-249,"y":-138}}</body>
+    </extra>
+</ns3:modelConfig>
